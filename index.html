@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Store - Premium Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-store"></i>
+                    <span>ShopifyStore</span>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#products" class="nav-link">Products</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Premium Products</h1>
+                <p class="hero-subtitle">Shop the latest collection of high-quality products designed for modern living</p>
+                <button class="cta-button" onclick="scrollToProducts()">
+                    <span>Shop Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Product Section -->
+    <section class="featured-product" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Product</h2>
+                <p class="section-subtitle">Our most popular item this month</p>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image-container">
+                    <div class="product-badge">Best Seller</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop&crop=center" 
+                         alt="Premium Wireless Headphones" 
+                         class="product-image" 
+                         id="productImage">
+                    <div class="product-image-overlay">
+                        <button class="quick-view-btn" onclick="quickView()">
+                            <i class="fas fa-eye"></i>
+                            <span>Quick View</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-category">Electronics</div>
+                    <h3 class="product-name">Premium Wireless Headphones</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">(4.9) • 1,247 reviews</span>
+                    </div>
+                    
+                    <p class="product-description">
+                        Experience crystal-clear sound with our premium wireless headphones. 
+                        Featuring active noise cancellation, 30-hour battery life, and 
+                        comfortable over-ear design for all-day listening.
+                    </p>
+                    
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Active Noise Cancellation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>30-Hour Battery Life</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Wireless & Wired Options</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Premium Build Quality</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-pricing">
+                        <div class="price-container">
+                            <span class="current-price" id="currentPrice">$299.99</span>
+                            <span class="original-price" id="originalPrice">$399.99</span>
+                            <span class="discount-badge">25% OFF</span>
+                        </div>
+                        <div class="shipping-info">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $50</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="decreaseQuantity()">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="quantity">1</span>
+                            <button class="qty-btn" onclick="increaseQuantity()">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <button class="buy-now-btn" onclick="buyNow()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Buy Now</span>
+                        </button>
+                        
+                        <button class="add-to-cart-btn" onclick="addToCart()">
+                            <i class="fas fa-plus"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>2-Year Warranty</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-Day Returns</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-headset"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Products Grid -->
+    <section class="products-grid">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">More Products</h2>
+                <p class="section-subtitle">Explore our complete collection</p>
+            </div>
+            
+            <div class="products-container">
+                <div class="product-item" onclick="selectProduct(1)">
+                    <div class="product-item-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Smart Watch">
+                        <div class="product-item-overlay">
+                            <button class="quick-add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-item-info">
+                        <h4>Smart Watch Pro</h4>
+                        <div class="product-item-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span>(4.2)</span>
+                        </div>
+                        <div class="product-item-price">
+                            <span class="current">$199.99</span>
+                            <span class="original">$249.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item" onclick="selectProduct(2)">
+                    <div class="product-item-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Running Shoes">
+                        <div class="product-item-overlay">
+                            <button class="quick-add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-item-info">
+                        <h4>Premium Running Shoes</h4>
+                        <div class="product-item-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-item-price">
+                            <span class="current">$149.99</span>
+                            <span class="original">$179.99</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-item" onclick="selectProduct(3)">
+                    <div class="product-item-image">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop" alt="Laptop">
+                        <div class="product-item-overlay">
+                            <button class="quick-add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-item-info">
+                        <h4>Ultrabook Pro</h4>
+                        <div class="product-item-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-item-price">
+                            <span class="current">$1,299.99</span>
+                            <span class="original">$1,499.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Stay Updated</h3>
+                <p>Get the latest product updates and exclusive offers</p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-store"></i>
+                        <span>ShopifyStore</span>
+                    </div>
+                    <p>Your trusted destination for premium products and exceptional shopping experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@shopifystore.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Commerce St, City, State 12345</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopifyStore. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="closeCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: $<span id="cartTotal">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h3>Premium Wireless Headphones</h3>
+                    <div class="modal-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(4.9) • 1,247 reviews</span>
+                    </div>
+                    <p class="modal-description">
+                        Experience crystal-clear sound with our premium wireless headphones. 
+                        Featuring active noise cancellation, 30-hour battery life, and 
+                        comfortable over-ear design for all-day listening.
+                    </p>
+                    <div class="modal-price">
+                        <span class="current">$299.99</span>
+                        <span class="original">$399.99</span>
+                    </div>
+                    <button class="modal-buy-btn" onclick="buyNow()">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
