@@ -1,6 +1,6 @@
 # Featured Product Section
 
-A responsive section to display a featured product in a Shopify theme or any frontend project.
+A responsive section to display a featured product in a Shopify theme.
 
 ## Features
 
